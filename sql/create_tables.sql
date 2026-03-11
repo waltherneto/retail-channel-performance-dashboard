@@ -1,0 +1,2 @@
+-- Initial SQL placeholder for schema creation.
+-- Detailed DDL will be added in Step 3.
