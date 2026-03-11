@@ -1,0 +1,1 @@
+-- Fact table loading logic will be added in later step.

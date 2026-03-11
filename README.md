@@ -78,6 +78,10 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## Notes
+
+For simplicity in this portfolio project, all tables were created in the default PostgreSQL public schema. In a production environment, staging and analytics objects would typically be separated into dedicated schemas. 
+
 ## Status
 
 In progress.
