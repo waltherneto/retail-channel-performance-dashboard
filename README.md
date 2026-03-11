@@ -78,6 +78,25 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## ETL Pipeline
+
+The ETL pipeline is organized into modular Python components:
+
+- `extract.py` reads the raw CSV dataset
+- `transform.py` standardizes, validates, and cleans the data
+- `run_pipeline.py` orchestrates the extract-and-transform stage
+- the processed dataset is written to `data/processed/retail_sales_clean.csv`
+
+### Data quality rules applied
+
+- required columns validation
+- text standardization
+- date parsing and validation
+- numeric type enforcement
+- positive value checks for `units_sold`
+- positive value checks for `revenue`
+- duplicate removal
+
 ## Notes
 
 For simplicity in this portfolio project, all tables were created in the default PostgreSQL public schema. In a production environment, staging and analytics objects would typically be separated into dedicated schemas. 
