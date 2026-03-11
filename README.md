@@ -118,6 +118,28 @@ The loading logic is orchestrated by `etl/load.py`, which:
 - executes SQL scripts for dimensions and fact loading
 - returns row-count summaries after execution
 
+## Data Quality and Validation
+
+The project includes SQL-based quality checks to validate the consistency of the warehouse after loading.
+
+### Validation coverage
+- row-count reconciliation between staging and fact tables
+- revenue reconciliation
+- units sold reconciliation
+- null foreign key checks
+- duplicate grain checks
+- invalid value checks
+- quick outlier inspection
+
+### Analytical validation queries
+Additional SQL queries were used to validate:
+- monthly revenue trends
+- regional revenue distribution
+- category performance
+- top products
+- distributor performance
+- sales channel performance
+
 ## Notes
 
 For simplicity in this portfolio project, all tables were created in the default PostgreSQL public schema. In a production environment, staging and analytics objects would typically be separated into dedicated schemas. 
