@@ -97,6 +97,27 @@ The ETL pipeline is organized into modular Python components:
 - positive value checks for `revenue`
 - duplicate removal
 
+## Warehouse Load
+
+After data cleaning, the processed dataset is loaded into PostgreSQL in two stages:
+
+1. `stg_retail_sales` receives the cleaned transactional data
+2. SQL scripts populate the analytical star schema:
+   - `dim_date`
+   - `dim_region`
+   - `dim_product`
+   - `dim_distributor`
+   - `dim_store`
+   - `dim_channel`
+   - `fact_sales`
+
+The loading logic is orchestrated by `etl/load.py`, which:
+- reads database credentials from environment variables
+- truncates tables for repeatable local execution
+- loads staging data from CSV
+- executes SQL scripts for dimensions and fact loading
+- returns row-count summaries after execution
+
 ## Notes
 
 For simplicity in this portfolio project, all tables were created in the default PostgreSQL public schema. In a production environment, staging and analytics objects would typically be separated into dedicated schemas. 
