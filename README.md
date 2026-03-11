@@ -68,6 +68,16 @@ The project uses a synthetic retail sales dataset generated with Python to simul
 - Applies volume variability by channel
 - Adds small price fluctuations to simulate real commercial behavior
 
+## Environment Setup
+
+Create and activate a virtual environment, then install the project dependencies:
+
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
 ## Status
 
 In progress.
