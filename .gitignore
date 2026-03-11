@@ -20,3 +20,6 @@ Thumbs.db
 
 # Power BI temp files
 *.pbix.autosave
+
+# Data outputs
+data/processed/*.csv

@@ -43,6 +43,31 @@ retail-channel-performance-dashboard/
 └── README.md
 ```
 
+## Dataset
+
+The project uses a synthetic retail sales dataset generated with Python to simulate a realistic consumer goods distribution scenario.
+
+### Raw dataset fields
+
+- transaction_date
+- region
+- distributor
+- store
+- sales_channel
+- product
+- category
+- units_sold
+- revenue
+
+### Dataset characteristics
+
+- Covers multiple regions
+- Includes several distributors and stores
+- Simulates product and category mix
+- Includes different sales channels
+- Applies volume variability by channel
+- Adds small price fluctuations to simulate real commercial behavior
+
 ## Status
 
 In progress.
