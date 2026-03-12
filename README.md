@@ -140,9 +140,29 @@ Additional SQL queries were used to validate:
 - distributor performance
 - sales channel performance
 
+## Power BI Dashboard
+
+The final reporting layer is a Power BI dashboard built on top of the PostgreSQL analytical model.
+
+### Dashboard pages
+1. Executive Overview
+2. Regional Performance
+3. Product Performance
+4. Distributor Performance
+
+### Core KPIs
+- Total Revenue
+- Units Sold
+- Average Order Value
+- Revenue Growth %
+
+### Model design
+The dashboard consumes a PostgreSQL star schema with one fact table and multiple dimensions. Relationships were configured following star schema principles, with dimension tables filtering the fact table.
+
 ## Notes
 
-For simplicity in this portfolio project, all tables were created in the default PostgreSQL public schema. In a production environment, staging and analytics objects would typically be separated into dedicated schemas. 
+1. For simplicity in this portfolio project, all tables were created in the default PostgreSQL public schema. In a production environment, staging and analytics objects would typically be separated into dedicated schemas.  
+2. Numeric formatting in the dashboard was intentionally designed to follow the locale settings of the viewer’s machine or reporting environment. This mirrors a common enterprise reporting practice in multinational contexts, where numeric separators are rendered according to the end user’s regional standards. This approach is also consistent with prior project experience supporting clients such as BIMBO and McCain, where reports were often parameterized to respect local formatting conventions.
 
 ## Status
 
